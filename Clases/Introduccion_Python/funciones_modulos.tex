@@ -1,26 +1,22 @@
 %!TEX program = xelatex
 \documentclass[12pt]{article}
 
-% ---------- IDIOMA ----------
-% --- Paquetes para XeLaTeX y codificación moderna ---
+% ---------- IDIOMA Y FUENTE ----------
 \usepackage{fontspec} 
 \usepackage[spanish, es-tabla]{babel} 
 % --- Cambiar "Cuadro" por "Tabla" ---
 \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
-
-% ---------- FUENTES ----------
 \setmainfont{TeX Gyre Termes}
 
 % ---------- PAQUETES MATEMÁTICOS Y FÍSICOS ----------
-\usepackage{amsmath,amssymb}
-\usepackage{amsfonts}
+\usepackage{amsmath,amssymb,amsfonts}
 \usepackage{physics}
 
 % ---------- GRÁFICOS Y COLORES ----------
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{babel} % <- Agrega esta línea
+\usetikzlibrary{babel} 
 \usepackage{tikz-3dplot}
 \usetikzlibrary{shapes, arrows, positioning, calc}
 \usetikzlibrary{arrows.meta} 
@@ -29,8 +25,6 @@
 
 % ---------- CÓDIGO (LISTINGS) ----------
 \usepackage{listings}
-\usepackage{lastpage}
-
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.95,0.95,0.95}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -61,7 +55,7 @@
 \usepackage{geometry}
 \geometry{letterpaper, margin=2cm, headheight=15pt}
 \usepackage{fancyhdr} 
-\usepackage{lastpage} 
+\usepackage{lastpage}
 \usepackage{wrapfig}
 \usepackage{multicol}
 \usepackage{enumitem}
@@ -119,6 +113,15 @@
 \usepackage{caption}    
 \newcommand{\lapiz}{\ding{46}\ }
 
+% ---------- CONFIGURACIÓN DE ENCABEZADOS (ITM) ----------
+\newcommand{\logo}{\includegraphics[height=3cm]{escudoitm}}
+\newcommand{\escola}{Facultad de Ciencias Exactas y Aplicadas}
+\newcommand{\disc}{Física Computacional 1}
+\newcommand{\auth}{Robinson Longas Bedoya}
+\newcommand{\emaill}{\url{robinsonlongas@itm.edu.co}}
+\newcommand{\email}{\url{robinsonlongas3586@correo.itm.edu.co}}
+\newcommand{\cabec}{Física Computacional 1}
+
 % ---------- ENLACES Y PDF ----------
 \usepackage{hyperref}
 
@@ -132,22 +135,13 @@
 \def\equationautorefname{Ecuación}
 \def\sectionautorefname{Sección}
 
-% ---------- CONFIGURACIÓN DE ENCABEZADOS (ITM) ----------
-\newcommand{\logo}{\includegraphics[height=3cm]{escudoitm}}
-\newcommand{\escola}{Facultad de Ciencias Exactas y Aplicadas}
-\newcommand{\disc}{Física Computacional 1}
-\newcommand{\auth}{Robinson Longas Bedoya}
-\newcommand{\emaill}{\url{robinsonlongas@itm.edu.co}}
-\newcommand{\email}{\url{robinsonlongas3586@correo.itm.edu.co}}
-\newcommand{\cabec}{Física Computacional 1}
-
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     urlcolor=blue,
     citecolor=blue,
-    pdftitle={\cabec\ -- \auth},
-    pdfauthor={\auth}
+    pdftitle={Física Computacional 1 -- Robinson Longas Bedoya},
+    pdfauthor={Robinson Longas Bedoya}
 }
 
 % Configuración de estilos de página
@@ -622,14 +616,12 @@ if __name__ == "__main__":
     \end{itemize}
 \end{enumerate}
 
-\subsection*{\textcolor{blue}{\textit{Ejemplo: secuencia de Fibonacci}}}
+\begin{cajaflex}[Ejemplo: secuencia de Fibonacci]
 
-Veamos un ejemplo de un módulo que me genera los números de Fibonacci. 
-
-	\noindent \textcolor{blue}{\textit{La siguiente discusión fue tomada del libro: 
+    \textcolor{blue}{\textit{La siguiente discusión fue tomada del libro: 
 	Introduction to real analysis, Robert G. Bartle et al}}
 
-	La secuencia de Fibonacci es una sucesión infinita de números 
+    La secuencia de Fibonacci es una sucesión infinita de números 
 	naturales que comienza con 1, y cada número subsiguiente es
 	la suma de los dos anteriores. 
 	La secuencia se define de la siguiente manera, 
@@ -667,6 +659,9 @@ Veamos un ejemplo de un módulo que me genera los números de Fibonacci.
 	\end{align}	
 	La ecuación anterior se resuelve de la manera usual y se encuentran dos raíces.
 	La raíz positiva coincide con la razón aúrea $L=\dfrac{1+\sqrt{5}}{2}\equiv\phi$.
+
+\end{cajaflex}
+
 
 A continuación, mostraremos numéricamente el resultado anterior.
 \begin{lstlisting}[language=Python, captionpos=t, title=\texttt{fibonacci.py}]
